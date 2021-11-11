@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<h1>Listagem de Perfil</h1>
+<br/>
+<br/>
+<a href="<?php echo $this->baseUrl('perfil/formulario');?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+    
+    <tr>
+        <td>Ações</td>
+        <td>Id</td>
+        <td>Nome</td>
+    </tr>
+    <?php foreach ($this->rowSet as $row){?>
+    <div class="form-group">
+    <tr>
+        <td>
+            <a href="<?php echo $this->baseUrl('perfil/formulario/id_perfil/' . $row['id_perfil']);?>" class="btn btn-warning">Alterar</a>
+            <a href="<?php echo $this->baseUrl('perfil/excluir/id_perfil/' . $row['id_perfil']);?>" class="btn btn-danger">Excluir</a>
+        </td>
+        <td><?php echo $row['id_perfil'];?></td>
+        <td><?php echo $row['nome'];?></td>
+        
+    </tr>
+    </div>
+    <?php } ?>
+    
+</table>

@@ -1,0 +1,33 @@
+<h1>Clientes</h1>
+
+<form action="<?php echo $this->baseUrl('cliente/gravar'); ?>" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id_cliente" value="<?php echo $this->row['id_cliente']; ?>" />
+	
+	<div class="form-group">
+	    <label for="nome">Nome</label>
+	    <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" value="<?php echo $this->row['nomeCliente']; ?>">
+	</div>
+	
+        <div class="form-group">
+	    <label for="email">E-mail</label>
+	    <input type="text" class="form-control" id="email" name="email" value="<?php echo $this->row['email']; ?>">
+	</div>
+        <div class="form-group">
+	    <label for="telefone">telefone</label>
+	    <input type="text" class="form-control" id="telefone" name="telefone" value="<?php echo $this->row['telefone']; ?>">
+	</div>
+	
+	<div class="text-center">
+		<input type="submit" value="Enviar" class="btn btn-success" />
+		<a href="<?php echo $this->baseUrl('cliente/index'); ?>" class="btn btn-danger" >Voltar</a>
+	</div>
+</form>
+<script>
+    $(function(){
+        
+        $('#id_uf').change(function(){
+            $('#div_municipios').load('<?php echo $this->baseUrl('usuario/carregar-municipio/id_uf/'); ?>' + $('#id_uf').val());
+        });
+        
+    });    
+</script>

@@ -1,0 +1,25 @@
+<h1>Listagem de Garçom</h1>
+
+<a href="<?php echo $this->baseUrl('garcom/formulario'); ?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+	<tr>
+		<td>Ações</td>
+                <td>id</td>
+		<td>Nome</td>
+		<td>E-mail</td>
+		<td>Telefone</td>
+	</tr>
+	<?php foreach($this->rowSet as $row){ ?>
+		<tr>
+			<td>
+				<a href="<?php echo $this->baseUrl('garcom/formulario/id_garcom/' . $row['id_garcom']); ?>" class="btn btn-warning">Alterar</a>
+				<a href="<?php echo $this->baseUrl('garcom/excluir/id_garcom/' . $row['id_garcom']); ?>" class="btn btn-danger">Excluir</a>
+			</td>
+			<td><?php echo $row['id_garcom']; ?></td>
+			<td><?php echo $row['nomeGarcom']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['telefone']; ?></td>
+		</tr>
+	<?php } ?>
+</table>

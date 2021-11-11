@@ -1,0 +1,16 @@
+<h1>Perfil</h1>
+
+<form action="<?php echo $this->baseUrl('perfil/gravar');?>" method="post">
+    
+    <input type="hidden" name="id_perfil"  value="<?php echo $this->row['id_perfil'];?>"/>
+    <!--<input type="text" name="id_perfil"  value="<?php echo $this->row['id_perfil'];?>"/> -->
+    <div class="form-group">
+    <label>Nome: </label><input type="text" name="nome"  value="<?php echo $this->row['nome'];?>"/>
+    <div>
+    <br/>
+    <br/>
+
+<input value="Enviar" type="submit">
+<a href="<?php echo $this->baseUrl('perfil/index');?>">Voltar</a>
+
+</form>

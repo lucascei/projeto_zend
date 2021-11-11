@@ -1,0 +1,30 @@
+<h1>Cadastro de produto</h1>
+
+<form action="<?php echo $this->baseUrl('produto/gravar'); ?>" method="post" enctype="multipart/form-data">
+	
+    <input type="hidden" name="id_produto" value="<?php echo $this->row['id_produto']; ?>" />
+	
+	<div class="form-group">
+	    <label for="nome">Nome do produto:</label>
+	    <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" value="<?php echo $this->row['nomeProduto']; ?>">
+	</div>
+	
+	
+	
+	
+        
+        <div class="form-group">
+	    <label for="preco">Preço:</label>
+	    <input type="text" class="form-control" id="senha" name="preco" value="<?php echo $this->row['preco']; ?>">
+	</div>
+    
+        <div class="form-group">
+	    <label for="foto">Foto</label>
+            <input type="file" class="form-control" id="foto" name="foto">
+	</div>
+        
+        <div class="text-center">
+		<input type="submit" value="Enviar" class="btn btn-success" />
+		<a href="<?php echo $this->baseUrl('produto/index'); ?>" class="btn btn-danger" >Voltar</a>
+	</div>
+</form>

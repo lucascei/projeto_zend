@@ -1,0 +1,27 @@
+<h1>Listagem de Mesas</h1>
+
+<a href="<?php echo $this->baseUrl('mesa/formulario'); ?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+	<tr>
+		<td>Ações</td>
+<!--		<td>Id</td>-->
+                <td>Quantidade</td>
+		<td>Cliente</td>
+                <td>Preço</td>
+	</tr>
+	<?php foreach($this->rowSet as $row){ ?>
+		<tr>
+			<td>
+				<a href="<?php echo $this->baseUrl('mesa/formulario/id_mesa/' . $row['id_mesa']); ?>" class="btn btn-warning">Alterar</a>
+				<a href="<?php echo $this->baseUrl('mesa/excluir/id_mesa/' . $row['id_mesa']); ?>" class="btn btn-danger">Excluir</a>
+			</td>
+<!--			<td><?php //echo $row['id_usuario']; ?></td>-->
+                        <td><?php echo $row['quantidade']; ?></td>
+			<td><?php echo $row['cliente']; ?></td>
+			<td><?php echo $row['preco']; ?></td>
+                        
+		</tr>
+	<?php } ?>
+</table>
+<a href="<?php echo $this->baseUrl('mesa/pdf'); ?>" class="btn btn-warning" target="_blanck">pdf</a>

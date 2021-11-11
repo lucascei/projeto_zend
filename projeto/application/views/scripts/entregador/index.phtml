@@ -1,0 +1,23 @@
+<h1>Listagem de Entregador</h1>
+
+<a href="<?php echo $this->baseUrl('entregador/formulario'); ?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+	<tr>
+		<td>Ações</td>
+<!--		<td>Id</td>-->
+                <td>Nome</td>
+		<td>telefone</td>
+        </tr>
+	<?php foreach($this->rowSet as $row){ ?>
+		<tr>
+			<td>
+				<a href="<?php echo $this->baseUrl('entregador/formulario/id_entregador/' . $row['id_entregador']); ?>" class="btn btn-warning">Alterar</a>
+				<a href="<?php echo $this->baseUrl('entregador/excluir/id_entregador/' . $row['id_entregador']); ?>" class="btn btn-danger">Excluir</a>
+			</td>
+<!--			<td><?php //echo $row['id_usuario']; ?></td>-->
+                        <td><?php echo $row['nome']; ?></td>
+			<td><?php echo $row['telefone']; ?></td>
+		</tr>
+	<?php } ?>
+</table>

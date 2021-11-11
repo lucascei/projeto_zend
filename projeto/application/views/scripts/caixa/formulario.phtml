@@ -1,0 +1,55 @@
+<h1>Mesas</h1>
+
+<form action="<?php echo $this->baseUrl('mesa/gravar'); ?>" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id_mesa" value="<?php echo $this->row['id_mesa']; ?>" />
+	
+	<div class="form-group">
+	    <label for="quantidade">Quantidade</label>
+	    <input type="text" class="form-control" id="quantidade" name="quantidade" value="<?php echo $this->row['quantidade']; ?>">
+	</div>
+	
+	<div class="form-group">
+	    <label for="nomeCliente">Cliente</label>
+    	<select class="form-control" id="id_cliente" name="id_cliente">
+    		<option value="">Selecione</option>
+    		<?php foreach($this->rowSetCliente as $rowCliente){ ?>
+    			<option <?php echo $this->row['id_cliente'] == $rowCliente['id_cliente'] ? 'selected="selected"' : ''; ?> value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nomeCliente']; ?></option>
+    		<?php } ?>
+    	</select>
+	</div>
+	
+	<div class="form-group">
+	    <label for="perfil">Cliente</label>
+    	<select class="form-control" id="id_perfil" name="">
+    		<option value="">Selecione</option>
+    		
+    	</select>
+	</div>
+        <div class="form-group">
+	    <label for="perfil">Garçon</label>
+            <select class="form-control" id="id_perfil" name="">
+    		<option value="">Selecione</option>
+    		
+    	</select>
+	</div>
+	
+	<div class="form-group">
+	    <label for="preco">preço</label>
+	    <input type="text" class="form-control" id="preco" name="preco" value="<?php echo $this->row['preco']; ?>">
+	</div>
+	
+	
+	<div class="text-center">
+		<input type="submit" value="Enviar" class="btn btn-success" />
+		<a href="<?php echo $this->baseUrl('mesa/index'); ?>" class="btn btn-danger" >Voltar</a>
+	</div>
+</form>
+<script>
+    $(function(){
+        
+        $('#id_uf').change(function(){
+            $('#div_municipios').load('<?php echo $this->baseUrl('usuario/carregar-municipio/id_uf/'); ?>' + $('#id_uf').val());
+        });
+        
+    });    
+</script>

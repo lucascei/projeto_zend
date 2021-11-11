@@ -1,0 +1,19 @@
+
+
+<?php
+
+
+                    $pdf = new Zend_Pdf();
+
+                    $page = new Zend_Pdf_Page(Zend_Pdf_Page::SIZE_A4); //595 x 843
+                    $page->setFont(Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA_BOLD), 9);
+
+                    $lucas = 'relatorio lucas';
+                    $page->drawText("$lucas", 30, 800);
+
+                    $pdf->pages[] = $page;
+
+                    header("Content-Type: application/pdf;");
+                    echo $pdf->render();
+                    
+                    ?>

@@ -1,0 +1,22 @@
+<h1>Listagem de Usuario</h1>
+
+<a href="<?php echo $this->baseUrl('usuario/formulario'); ?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+	<tr>
+		<td>Ações</td>
+		<td>Id</td>
+		<td>Nome</td>
+	</tr>
+	<?php foreach($this->rowSet as $row){ ?>
+		<tr>
+			<td>
+				<a href="<?php echo $this->baseUrl('usuario/formulario/id_usuario/' . $row['id_usuario']); ?>" class="btn btn-warning">Alterar</a>
+				<a href="<?php echo $this->baseUrl('usuario/excluir/id_usuario/' . $row['id_usuario']); ?>" class="btn btn-danger">Excluir</a>
+			</td>
+			<td><?php echo $row['id_usuario']; ?></td>
+			<td><?php echo $row['nome']; ?></td>
+			
+		</tr>
+	<?php } ?>
+</table>

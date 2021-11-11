@@ -1,0 +1,21 @@
+<h1>Login de acesso</h1>
+
+<?php if(!empty($_SESSION['mensagem'])){
+    
+     echo '<div class="alert alert-danger"><h1>' . $_SESSION['mensagem'] . '</h1></div>';
+     unset($_SESSION['mensagem']);
+}
+?>
+<form action="<?php echo $this->baseUrl('usuario/autenticar'); ?>" method="post">
+    <div class="form-group">
+	    <label for="nome">E-mail</label>
+	    <input type="text" class="form-control" id="nome" name="email" value="">
+	</div>
+	
+	<div class="form-group">
+	    <label for="telefone">Senha</label>
+	    <input type="password" class="form-control" id="telefone" name="senha" value="">
+	</div>
+    <input type="submit" value="logar" class="btn btn-success">
+    <a href="<?php echo $this->baseUrl('usuario/login'); ?>" class="btn btn-danger" >Voltar</a>
+</form>

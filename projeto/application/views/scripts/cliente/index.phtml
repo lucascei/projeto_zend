@@ -1,0 +1,23 @@
+<h1>Listagem Clientes</h1>
+
+<a href="<?php echo $this->baseUrl('cliente/formulario'); ?>" class="btn btn-success">Inserir</a>
+
+<table border="1" width="100%" class="table table-striped">
+	<tr>
+		<td>Ações</td>
+		
+		<td>Nome</td>
+		<td>Telefone</td>
+	</tr>
+	<?php foreach($this->rowSet as $row){ ?>
+		<tr>
+			<td>
+				<a href="<?php echo $this->baseUrl('cliente/formulario/id_cliente/' . $row['id_cliente']); ?>" class="btn btn-warning">Alterar</a>
+				<a href="<?php echo $this->baseUrl('cliente/excluir/id_cliente/' . $row['id_cliente']); ?>" class="btn btn-danger">Excluir</a>
+			</td>
+			
+			<td><?php echo $row['nomeCliente']; ?></td>
+			<td><?php echo $row['telefone']; ?></td>
+		</tr>
+	<?php } ?>
+</table>
